@@ -1,0 +1,3 @@
+rootProject.name = "OnePlusX"
+include ':app'
+include ':app:oneplusx'

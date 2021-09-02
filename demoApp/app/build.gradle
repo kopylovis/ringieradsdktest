@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id "com.betomorrow.appcenter"
+    id "com.starter.easylauncher"
+
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "ch.oneplusx.demo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../oneplusx_keystore')
+            storePassword 'j239Iki)*'
+            keyAlias 'oneplusx'
+            keyPassword 'j239Iki)*'
+        }
+        debug.initWith(signingConfigs.release)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions "mode"
+    productFlavors {
+        demo {
+            dimension "mode"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ['*.jar', '*.aar'])
+    implementation 'com.squareup:seismic:1.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:${libraryVersions.ktx}"
+    implementation "androidx.appcompat:appcompat:${libraryVersions.androidx.appcompat}"
+    implementation "com.google.android.material:material:${libraryVersions.material}"
+    implementation "androidx.constraintlayout:constraintlayout:${libraryVersions.constraintlayout}"
+    implementation "com.jakewharton.timber:timber:${libraryVersions.timber}"
+
+    implementation "com.microsoft.appcenter:appcenter-analytics:${libraryVersions.app_center}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${libraryVersions.app_center}"
+    implementation "com.microsoft.appcenter:appcenter-distribute:${libraryVersions.app_center}"
+    implementation project(path: ':app:oneplusx')
+    implementation "androidx.preference:preference-ktx:${libraryVersions.preference_ktx}"
+
+    testImplementation "junit:junit:${libraryVersions.tests.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${libraryVersions.tests.junit_ext}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${libraryVersions.tests.espresso_core}"
+}
+
+appcenter {
+    apiToken = "d733b5e5ec7f82d6e675cf5135c69a817370069b" // Required. Token generated on your AppCenter account
+    ownerName = "iAgentur-Team-Organization"
+    distributionGroups = ["iAgentur-Team-Organization"]   // Required. User or Organization name who owns the App on AppCenter
+    notifyTesters = false
+    uploadMappingFiles = false
+
+    apps {
+        demo {
+            appName = "1plusX-demo-Android"
+            distributionGroups = ["Collaborators"]
+            dimension "mode"
+        }
+    }
+
+    task setupAppCentertParams() {
+        dependsOn "appCenterUploadDemoDebug"
+    }
+
+    task uploadDemo() {
+        dependsOn ":app:assembleDemoDebug"
+        dependsOn setupAppCentertParams
+        setupAppCentertParams.mustRunAfter(":app:assembleDemoDebug")
+    }
+}
+
+easylauncher {
+    defaultFlavorNaming false // Use flavor name for default ribbon, instead of the type name
+
+    buildTypes {
+        release {
+            enable false
+        }
+        debug {
+            // OVERRIDE all previous filters defined for `productionDebug` variant
+            filters = customRibbon(label : "${rootProject.ext.versionName}.${rootProject.ext.versionCode}", ribbonColor: "#80000000")
+        }
+    }
+}
+apply from: '../buildsystem/one_plus_x_libraries.gradle'
