@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.HiddenSettingsActivity">
+
+    <TextView
+        android:id="@+id/ahsXandrTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="Xandr memberId: "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ahsXandrMemberId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ahsXandrTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1293192391" />
+
+    <TextView
+        android:id="@+id/ahsAdmobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="Admob adUnitId: "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ahsXandrButton" />
+
+    <TextView
+        android:id="@+id/ahsAdmobAdUnitId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ahsXandrTitle"
+        app:layout_constraintTop_toBottomOf="@id/ahsXandrButton"
+        tools:text="1293192391" />
+
+    <Button
+        android:id="@+id/ahsXandrButton"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="Set member id"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ahsXandrTitle" />
+
+    <Button
+        android:id="@+id/ahsXandrButtonRemove"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="Remove member id"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/ahsXandrButton"
+        app:layout_constraintTop_toBottomOf="@id/ahsXandrTitle" />
+
+    <Button
+        android:id="@+id/ahsAdmobButton"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="Set adUnit id"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ahsAdmobTitle" />
+
+    <Button
+        android:id="@+id/ahsAdmobButtonRemove"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="Remove adUnit id"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/ahsAdmobButton"
+        app:layout_constraintTop_toBottomOf="@id/ahsAdmobTitle" />
+
+    <TextView
+        android:id="@+id/ahsHintOverride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="Hint: these values will overwrite the data from the remote config"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ahsAdmobButtonRemove" />
+
+    <Button
+        android:id="@+id/ahsSaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:text="Save changes"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ahsHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="Hint: After saving the changes, you need to restart the application."
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/ahsSaveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

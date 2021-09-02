@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.BannerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/abAppBar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:theme="@style/Theme.RingerAdSdkandroid.AppBarOverlay"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/abToolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                android:background="?attr/colorPrimary"-->
+<!--                android:paddingStart="50dp"-->
+<!--                app:popupTheme="@style/Theme.RingerAdSdkandroid.PopupOverlay"-->
+<!--                tools:ignore="RtlSymmetry" />-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/abImageViewArrowBack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="12dp"-->
+<!--            android:background="@drawable/ic_baseline_arrow_back_24"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:elevation="4dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/abAppBar"-->
+<!--            app:layout_constraintStart_toStartOf="@id/abAppBar"-->
+<!--            app:layout_constraintTop_toTopOf="@id/abAppBar" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/abBannerOneTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray">
+
+                <TextView
+                    android:id="@+id/abPlaceholderIdOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Placeholder Id: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/abLoadAdOneButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/design_default_color_primary"
+                    android:text="Load banner"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ch.iagentur.ringieradsdk.external.ad.BannerAdView
+            android:id="@+id/abBannerOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abBannerOneTitle"
+            tools:background="@color/teal_200" />
+
+        <ImageView
+            android:id="@+id/abBannerOneInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_baseline_help_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/abBannerOne" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/abBannerTitleTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abBannerOne">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray">
+
+                <TextView
+                    android:id="@+id/abPlaceholderIdTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Placeholder Id: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/abLoadAdTwoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/design_default_color_primary"
+                    android:text="Load banner"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ch.iagentur.ringieradsdk.external.ad.BannerAdView
+            android:id="@+id/abBannerTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abBannerTitleTwo"
+            tools:background="@color/teal_200" />
+
+        <ImageView
+            android:id="@+id/abBannerTwoInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_baseline_help_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/abBannerTwo" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/abBannerTitleThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abBannerTwo">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray">
+
+                <TextView
+                    android:id="@+id/abPlaceholderIdThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Placeholder Id: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/abLoadAdThreeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/design_default_color_primary"
+                    android:text="Load banner"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ch.iagentur.ringieradsdk.external.ad.BannerAdView
+            android:id="@+id/abBannerThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abBannerTitleThree"
+            tools:background="@color/teal_200" />
+
+        <ImageView
+            android:id="@+id/abBannerThreeInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_baseline_help_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/abBannerThree" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

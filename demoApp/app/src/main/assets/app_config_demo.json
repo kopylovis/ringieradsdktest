@@ -1,0 +1,1850 @@
+{
+  "name": "Blick.ch_DE",
+  "token": "ADM-Blick.ch_DE",
+  "targetings": {
+    "admforce": "%%URL%%"
+  },
+  "settings": {
+    "overrideChannel": "1",
+    "overrideAllowedSizes": "1",
+    "vmapUrl": "https://cdn.admeira.ch/v1/loadvmap",
+    "serverSideAdInjection": "1",
+    "serverSideAdInjectionPal": "1",
+    "timedBlocker": "TA_1=eod:MTA_1=eod",
+    "autoLoadSlots": "12"
+  },
+  "modules": [
+    {
+      "name": "LazyLoading",
+      "type": "util",
+      "enabled": true,
+      "queueEnabler": false,
+      "version": "1.0.0"
+    },
+    {
+      "name": "AppNexus",
+      "type": "adserver",
+      "enabled": true,
+      "queueEnabler": true,
+      "dependsOn": "LazyLoading",
+      "version": "1.0.0",
+      "settings": {
+        "astVersion": "0.33.0",
+        "blockPixelCreativeSize": "1x2",
+        "defaultPixelCreativeSize": "1x1",
+        "memberId": "17058950"
+      }
+    },
+    {
+      "name": "AdMob",
+      "type": "adserver",
+      "enabled": true,
+      "queueEnabler": false,
+      "dependsOn": "LazyLoading",
+      "version": "2.0.0",
+      "settings": {
+        "astVersion": "0.33.0",
+        "blockPixelCreativeSize": "1x2",
+        "defaultPixelCreativeSize": "1x1",
+        "memberId": "ca-app-pub-3940256099942544/6300978111"
+      }
+    }
+  ],
+  "placements": {
+    "MobileAppAndroid": {
+      "Home": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 500,
+            "enabled": true
+          },
+          "modules": [
+            "AppNexus",
+            "AdMob"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200"
+              ]
+            }
+          ],
+          "settings": {
+            "placementId": "17058950",
+            "adUnitId": "ca-app-pub-3940256099942544/6300978111"
+          }
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 500,
+            "enabled": true
+          },
+          "modules": [
+            "AdMob",
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x50",
+                "320x100",
+                "320x480"
+              ]
+            }
+          ],
+          "settings": {
+            "placementId": "17058950",
+            "adUnitId": "ca-app-pub-3940256099942544/6300978111"
+          }
+        }
+      },
+      "News": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus",
+            "AdMob"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200"
+              ]
+            }
+          ],
+          "settings": {
+            "placementId": "17058950",
+            "adUnitId": "ca-app-pub-3940256099942544/6300978111"
+          }
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AdMob",
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x50",
+                "320x100",
+                "320x480"
+              ]
+            }
+          ],
+          "settings": {
+            "placementId": "17058950",
+            "adUnitId": "ca-app-pub-3940256099942544/6300978111"
+          }
+        }
+      },
+      "Sport": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Meinung": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Politik": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Wirtschaft": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "People": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Leben": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Digital": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Auto": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "Video": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "ROS": {
+        "MMR_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x416",
+                "320x200",
+                "3x1"
+              ]
+            }
+          ]
+        },
+        "MPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416"
+              ]
+            }
+          ]
+        },
+        "MMR_3": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MMR_5": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "308x172",
+                "320x160",
+                "320x50",
+                "300x50"
+              ]
+            }
+          ]
+        },
+        "MHPA_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "targeting": {
+            "product": "flexL||flexXL"
+          },
+          "modules": [
+            "AppNexus"
+          ],
+          "allowedSizes": [
+            {
+              "minWidth": 300,
+              "sizes": [
+                "300x250",
+                "300x600",
+                "320x160",
+                "320x50",
+                "300x50",
+                "320x480",
+                "320x416",
+                "3x1",
+                "320x600"
+              ]
+            }
+          ]
+        }
+      },
+      "BlickTV": {
+        "PREROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "PREROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "POSTROLL_1": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        },
+        "MIDROLL_2": {
+          "enabled": true,
+          "native": false,
+          "lazyLoading": {
+            "offset": 0,
+            "enabled": false
+          },
+          "modules": [
+            "AppNexus"
+          ]
+        }
+      }
+    }
+  }
+}

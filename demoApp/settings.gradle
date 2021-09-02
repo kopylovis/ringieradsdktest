@@ -1,0 +1,3 @@
+rootProject.name = "ringerAdSdk-android"
+include ':app'
+include ':app:ringieradsdk'
