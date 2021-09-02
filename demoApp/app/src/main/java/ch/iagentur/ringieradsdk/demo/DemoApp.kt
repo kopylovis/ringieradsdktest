@@ -27,7 +27,7 @@ class DemoApp : Application() {
         }
         setupLoggerOverlay()
         setupDefaultValues()
-        Timber.tag(RingierConfig.LOG_TAG).d("Demo app!!: Started")
+        Timber.tag(RingierConfig.LOG_TAG).d("Demo app: Started")
         val configuration = RingierAd.Configuration(
             configAssetPath = DemoAppConfig.DEMO_TAG_MANAGER_ASSETS_PATH,
             logsEnabled = BuildConfig.DEBUG, ringierAdPreferences.getUrl()
@@ -38,7 +38,7 @@ class DemoApp : Application() {
             keywords = keywords,
             isTestMode = ringierAdPreferences.isTestModeEnabled
         )
-        Timber.tag(RingierConfig.LOG_TAG).e("Demo app!!: Test mode = ${ringierAdPreferences.isTestModeEnabled}")
+        Timber.tag(RingierConfig.LOG_TAG).e("Demo app: Test mode = ${ringierAdPreferences.isTestModeEnabled}")
         RingierAd.setCustomConfiguration(customConfiguration)
         RingierAd.start(this, configuration)
     }
