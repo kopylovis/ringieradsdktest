@@ -1,6 +1,6 @@
 package ch.iagentur.ringieradsdk.demo.ui.models
 
 data class RingierAdItemModel(
-    val placeholderIds: String,
-    val screenIds: String
+    val slotId: String,
+    val channelId: String
 )

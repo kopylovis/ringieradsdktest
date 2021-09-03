@@ -41,7 +41,7 @@ class BannerActivity : ViewBindingBaseActivity<ActivityBannerBinding>() {
                         mapOfSizes.remove(0)
                     }
                     mapOfSizes[0] = sizes
-                    abBannerOneInfo.visibility = View.VISIBLE
+                    abBannerOneInfo.beVisible()
                 }
             }
             abBannerTwo.adSizeListener = object : RingierAd.AdSizeListener {
@@ -53,7 +53,7 @@ class BannerActivity : ViewBindingBaseActivity<ActivityBannerBinding>() {
                         mapOfSizes.remove(1)
                     }
                     mapOfSizes[1] = sizes
-                    abBannerTwoInfo.visibility = View.VISIBLE
+                    abBannerTwoInfo.beVisible()
                 }
             }
             abBannerThree.adSizeListener = object : RingierAd.AdSizeListener {
@@ -65,7 +65,7 @@ class BannerActivity : ViewBindingBaseActivity<ActivityBannerBinding>() {
                         mapOfSizes.remove(2)
                     }
                     mapOfSizes[2] = sizes
-                    abBannerThreeInfo.visibility = View.VISIBLE
+                    abBannerThreeInfo.beVisible()
                 }
             }
         }

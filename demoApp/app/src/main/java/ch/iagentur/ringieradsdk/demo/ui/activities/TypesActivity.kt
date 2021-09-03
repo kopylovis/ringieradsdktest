@@ -3,7 +3,6 @@ package ch.iagentur.ringieradsdk.demo.ui.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
 import ch.iagentur.ringieradsdk.demo.DemoAppConfig
 import ch.iagentur.ringieradsdk.demo.R

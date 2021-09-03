@@ -6,6 +6,7 @@ import ch.iagentur.ringieradsdk.demo.databinding.RowRingieradBinding
 import ch.iagentur.ringieradsdk.demo.extensions.beInvisible
 import ch.iagentur.ringieradsdk.demo.extensions.beVisible
 import ch.iagentur.ringieradsdk.demo.extensions.showAlertDialog
+import ch.iagentur.ringieradsdk.demo.extensions.toStringWithNewLine
 import ch.iagentur.ringieradsdk.demo.ui.models.RingierAdItemModel
 import ch.iagentur.ringieradsdk.external.ad.RingierAd
 import ch.iagentur.ringieradsdk.external.error.RingierAdError
@@ -24,15 +25,15 @@ class RingierAdViewHolder(private val binding: RowRingieradBinding) :
         binding.apply {
             //If the banner has an advertisement, it won't send a "Load Ad" request.
             if (rrBannerAdView.childCount == 0) {
-                rrBannerAdView.loadAd(ringierAdItemModel.placeholderIds, ringierAdItemModel.screenIds)
+                rrBannerAdView.loadAd(ringierAdItemModel.slotId, ringierAdItemModel.channelId)
             }
             itemView.setOnClickListener {
                 clickListener?.invoke()
             }
             rrButtonInfoImageView.setOnClickListener {
                 itemView.context.showAlertDialog(
-                    "${ringierAdItemModel.placeholderIds} settings: ",
-                    size.toString(),
+                    "${ringierAdItemModel.slotId} settings: ",
+                    sizes.toStringWithNewLine(),
                     "OK"
                 ) {}
             }
@@ -44,10 +45,10 @@ class RingierAdViewHolder(private val binding: RowRingieradBinding) :
                 override fun adFailed(error: RingierAdError) {
                     rrButtonInfoImageView.beInvisible()
                     Timber.tag(TAG)
-                        .d("${ringierAdItemModel.placeholderIds}, error = ${error.message}")
+                        .d("${ringierAdItemModel.slotId}, error = ${error.message}")
                     if (error.throwable != null) {
                         Timber.tag(TAG)
-                            .e(error.throwable, "${ringierAdItemModel.placeholderIds} adFailed")
+                            .e(error.throwable, "${ringierAdItemModel.slotId} adFailed")
                     }
                 }
 

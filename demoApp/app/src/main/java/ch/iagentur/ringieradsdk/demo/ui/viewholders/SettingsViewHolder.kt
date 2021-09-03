@@ -1,8 +1,8 @@
 package ch.iagentur.ringieradsdk.demo.ui.viewholders
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import ch.iagentur.ringieradsdk.demo.databinding.ItemSettingsRecyclerviewBinding
+import ch.iagentur.ringieradsdk.demo.extensions.beGone
 import ch.iagentur.ringieradsdk.external.models.RingierAdUrlModel
 
 class SettingsViewHolder(private val binding: ItemSettingsRecyclerviewBinding) :
@@ -14,7 +14,7 @@ class SettingsViewHolder(private val binding: ItemSettingsRecyclerviewBinding) :
     fun bindView(urlModel: RingierAdUrlModel) {
         binding.apply {
             if (!urlModel.isRemovable) {
-                isrRemoveImageView.visibility = View.GONE
+                isrRemoveImageView.beGone()
             }
             isrSwitchCompat.isChecked = urlModel.isActivated
             isrUrlTextView.text = urlModel.url
