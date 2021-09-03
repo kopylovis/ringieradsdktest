@@ -1,2 +1,2 @@
 # ringieradsdktest
-sdsd
+Demo app
